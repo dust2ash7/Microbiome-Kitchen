@@ -4,7 +4,7 @@ A beginner cookbook of high-protein, whole-food meals for gut and brain health. 
 
 **Live:** [Open Microbiome Kitchen](https://dust2ash7.github.io/Microbiome-Kitchen/) · [GitHub](https://github.com/dust2ash7/Microbiome-Kitchen)
 
-Sixteen meals. Search, save, and shop. The grocery list and saved recipes stay on this device.
+Forty-one beginner meals, including salads and desserts. Search, save, and shop. The grocery list and saved recipes stay on this device.
 
 ```bash
 npm install

@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { formatIngredient, roundCook } from "@/data/format";
+import { roundCook } from "@/data/format";
+import { shopFor } from "@/data/packs";
 import type { Aisle, Recipe } from "@/data/types";
 import { AISLES } from "@/data/types";
 
@@ -29,6 +30,8 @@ type KitchenState = {
   toggleItem: (key: string) => void;
   bumpItem: (key: string, direction: 1 | -1) => void;
   clearItems: () => void;
+  rounds: number;
+  setRounds: (rounds: number) => void;
 };
 
 function itemKey(name: string, unit: string, aisle: Aisle) {
@@ -41,8 +44,10 @@ function stepFor(unit: string) {
   return 0.5;
 }
 
-export function groceryText(items: GroceryItem[]) {
-  const lines = ["Microbiome Kitchen — grocery list", ""];
+export function groceryText(items: GroceryItem[], rounds = 1) {
+  const lines = ["Microbiome Kitchen — grocery list"];
+  if (rounds > 1) lines.push(`Cook each meal on this list ${rounds} times.`);
+  lines.push("");
   const groups = [
     { heading: "Still to buy", items: items.filter((item) => !item.checked) },
     { heading: "Already in the cart", items: items.filter((item) => item.checked) },
@@ -56,9 +61,10 @@ export function groceryText(items: GroceryItem[]) {
       lines.push(aisle);
       for (const item of inAisle) {
         const mark = item.checked ? "[x]" : "[ ]";
-        const label = formatIngredient(item.qty, item.unit, item.name, item.plural);
+        const shop = shopFor(item, rounds);
         const from = item.sources.map((source) => source.title).join(", ");
-        lines.push(`${mark} ${label}${from ? ` — ${from}` : ""}`);
+        lines.push(`${mark} ${shop.buy}${from ? ` — ${from}` : ""}`);
+        lines.push(`    ${shop.detail}`);
       }
       lines.push("");
     }
@@ -124,6 +130,8 @@ export const useKitchen = create<KitchenState>()(
           }),
         })),
       clearItems: () => set({ items: [] }),
+      rounds: 1,
+      setRounds: (rounds) => set({ rounds: Math.min(3, Math.max(1, Math.round(rounds))) }),
     }),
     {
       name: "microbiome-kitchen-v1",

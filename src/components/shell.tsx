@@ -51,7 +51,7 @@ export function Shell({ children, extraPad = false }: { children: ReactNode; ext
           </Link>
         </div>
       </header>
-      <main id="main" className={cn("mx-auto w-full max-w-5xl px-4 pt-6", extraPad ? "pb-56" : "pb-36")}>
+      <main id="main" className={cn("mx-auto w-full max-w-5xl px-4 pt-6", extraPad ? "pb-72" : "pb-36")}>
         {children}
       </main>
       <nav className="nav-safe fixed inset-x-0 bottom-0 z-30 border-t border-line bg-paper" aria-label="Primary">

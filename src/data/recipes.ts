@@ -1,4 +1,5 @@
 import type { Aisle, Ingredient, Recipe } from "@/data/types";
+import { moreRecipes } from "@/data/more-recipes";
 
 function ing(
   name: string,
@@ -1008,6 +1009,7 @@ export const recipes: Recipe[] = [
       "A tablespoon of hemp seeds on top for more protein.",
     ],
   },
+  ...moreRecipes,
 ];
 
 export function getRecipe(id: string) {

@@ -151,8 +151,11 @@ function authPopupPlugin(): Plugin {
 const pagesBase = process.env.PAGES_BASE;
 
 function pagesRoutes() {
-  const recipes = readFileSync(new URL("./src/data/recipes.ts", import.meta.url), "utf8");
-  const ids = [...recipes.matchAll(/^\s+id: "([^"]+)",$/gm)].map((match) => match[1]);
+  const files = ["./src/data/recipes.ts", "./src/data/more-recipes.ts"];
+  const ids = files.flatMap((file) => {
+    const text = readFileSync(new URL(file, import.meta.url), "utf8");
+    return [...text.matchAll(/^\s+id: "([^"]+)",$/gm)].map((match) => match[1]);
+  });
   return [
     { path: "/" },
     { path: "/grocery" },

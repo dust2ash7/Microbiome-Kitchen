@@ -242,35 +242,53 @@ function RecipeDetail({ recipe }: { recipe: Recipe }) {
       <p className="mt-6 text-sm text-muted">{categoriesOf(recipe).join(" · ")}</p>
 
       <div className="above-nav nav-safe fixed inset-x-0 z-20 border-t border-line bg-paper">
-        <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-3">
-          <div className="flex items-center rounded-full bg-cream ring-1 ring-line">
+        <div className="mx-auto max-w-5xl px-4 py-3">
+          <div className="mb-2 flex gap-2" role="group" aria-label="Scale this recipe for more people">
+            {[2, 4].map((count) => (
+              <button
+                key={count}
+                type="button"
+                aria-pressed={servings === count}
+                onClick={() => setServings(count)}
+                className={cn(
+                  "h-10 flex-1 rounded-full px-3 text-sm font-semibold",
+                  servings === count ? "bg-sage text-paper" : "bg-cream text-ink ring-1 ring-line",
+                )}
+              >
+                Enough for {count}
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center rounded-full bg-cream ring-1 ring-line">
+              <button
+                type="button"
+                aria-label="Fewer servings"
+                onClick={() => setServings((value) => Math.max(1, value - 1))}
+                className="flex size-11 items-center justify-center"
+              >
+                <Minus className="size-4" />
+              </button>
+              <span className="min-w-16 text-center text-sm font-semibold tabular-nums">
+                {servings} {servings === 1 ? "serving" : "servings"}
+              </span>
+              <button
+                type="button"
+                aria-label="More servings"
+                onClick={() => setServings((value) => Math.min(12, value + 1))}
+                className="flex size-11 items-center justify-center"
+              >
+                <Plus className="size-4" />
+              </button>
+            </div>
             <button
               type="button"
-              aria-label="Fewer servings"
-              onClick={() => setServings((value) => Math.max(1, value - 1))}
-              className="flex size-11 items-center justify-center"
+              onClick={addToList}
+              className="h-12 flex-1 rounded-full bg-sage px-4 text-sm font-semibold text-paper"
             >
-              <Minus className="size-4" />
-            </button>
-            <span className="min-w-16 text-center text-sm font-semibold tabular-nums">
-              {servings} {servings === 1 ? "serving" : "servings"}
-            </span>
-            <button
-              type="button"
-              aria-label="More servings"
-              onClick={() => setServings((value) => Math.min(12, value + 1))}
-              className="flex size-11 items-center justify-center"
-            >
-              <Plus className="size-4" />
+              Add to grocery list
             </button>
           </div>
-          <button
-            type="button"
-            onClick={addToList}
-            className="h-12 flex-1 rounded-full bg-sage px-4 text-sm font-semibold text-paper"
-          >
-            Add to grocery list
-          </button>
         </div>
       </div>
     </Shell>

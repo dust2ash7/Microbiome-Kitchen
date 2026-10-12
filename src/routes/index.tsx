@@ -54,7 +54,7 @@ function Home() {
         <p className="text-sm font-semibold tracking-wide text-sage uppercase">Whole foods, plain steps</p>
         <h1 className="mt-2 font-display text-4xl text-ink">Cook food that feeds your gut.</h1>
         <p className="mt-3 text-base text-muted">
-          Sixteen high-protein meals made from real ingredients. Every recipe tells you how to cut the food, why it
+          {recipes.length} beginner recipes made from real ingredients. Every recipe tells you how to cut the food, why it
           matters for your gut and brain, and how to drop it on a grocery list.
         </p>
       </section>

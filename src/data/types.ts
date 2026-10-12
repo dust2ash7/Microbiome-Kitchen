@@ -3,6 +3,7 @@ export const AISLES = [
   "Proteins",
   "Dairy & Fermented",
   "Nuts & Seeds",
+  "Frozen",
   "Pantry",
 ] as const;
 
@@ -10,7 +11,7 @@ export type Aisle = (typeof AISLES)[number];
 
 export type DietTag = "vegetarian" | "dairy-free" | "gluten-free";
 
-export type MealTag = "Breakfast" | "Lunch" | "Dinner" | "Snacks";
+export type MealTag = "Breakfast" | "Lunch" | "Dinner" | "Salads" | "Snacks" | "Desserts";
 
 export type Ingredient = {
   name: string;
@@ -65,7 +66,9 @@ export const CATEGORIES = [
   "Breakfast",
   "Lunch",
   "Dinner",
+  "Salads",
   "Snacks",
+  "Desserts",
   "High-Protein",
   "Fermented Foods",
   "Fiber-Rich",

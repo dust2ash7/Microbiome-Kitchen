@@ -381,6 +381,118 @@ export const preps: Prep[] = [
       "Cooking parsley for a long time. Stir it in after the heat is off, or in the last minute, so it stays bright.",
     ],
   },
+  {
+    id: "halve-brussels",
+    title: "Trim and halve Brussels sprouts",
+    image: "/prep/brussels.jpg",
+    imageAlt: "Halved Brussels sprouts on a board, cut side up, with the dry stem ends trimmed off.",
+    steps: [
+      "Pull off any yellow or loose outer leaves. Rinse the sprouts in a colander.",
+      "Trim the dry brown end of the stem. Leave a little stem so the sprout holds together.",
+      "Cut each sprout in half through the stem. If one is huge, cut it in quarters so it cooks with the others.",
+      "Pat them dry. Wet sprouts steam instead of browning.",
+    ],
+    mistakes: [
+      "Leaving them whole. The outside burns before the center softens.",
+      "Cutting the whole stem off so the leaves fall apart in the pan.",
+    ],
+  },
+  {
+    id: "peel-shrimp",
+    title: "Peel and devein shrimp",
+    image: "/prep/shrimp.jpg",
+    imageAlt: "Raw shrimp on a board, some still in the shell and some peeled and deveined.",
+    steps: [
+      "If the shrimp are frozen, thaw them overnight in the fridge or under cold running water. Do not use hot water.",
+      "Pull the shell off from the legs toward the back. You can leave the tail on for looks, or pinch it off.",
+      "Run a small knife along the back, just deep enough to open the dark line. Lift that vein out with the knife tip and rinse it away.",
+      "Pat them very dry so they sear instead of boiling in their own water.",
+    ],
+    mistakes: [
+      "Cooking them until they curl into a tight O. They are done when they turn pink and just curl into a C, about 2 to 3 minutes.",
+      "Peeling them and then leaving them in a warm puddle. Keep them cold until the pan is hot.",
+    ],
+  },
+  {
+    id: "slice-scallion",
+    title: "Slice green onions",
+    image: "/prep/scallion.jpg",
+    imageAlt: "Green onions sliced into thin rings, white and green parts kept together.",
+    steps: [
+      "Trim the root end and any dried tips. Rinse off grit where the white meets the green.",
+      "Use both the white and the green. The white is sharper. The green is mild.",
+      "Slice straight across into thin rings, about the thickness of a coin.",
+      "Add the white to a warm pan. Save the green for the very end so it stays bright.",
+    ],
+    mistakes: [
+      "Throwing away the green tops. That is most of the onion, and it is the mild part.",
+      "Slicing them an hour ahead and leaving them out. They dry and get strong.",
+    ],
+  },
+  {
+    id: "cube-apple",
+    title: "Core and cube an apple or pear",
+    image: "/prep/apple.jpg",
+    imageAlt: "An apple cut into even chunks on a wooden board, core set aside.",
+    steps: [
+      "Wash the fruit. Leave the peel on. It holds fiber and keeps the pieces from falling apart.",
+      "Stand it up and cut down one side, close to the core. Turn and repeat until you have four cheeks and a square core.",
+      "Cut each cheek into sticks, then across into bite-size chunks.",
+      "For a baked pear, cut it in half lengthwise and scoop the core out with a spoon instead.",
+    ],
+    mistakes: [
+      "Cutting through the core and leaving hard bits in the bowl.",
+      "Peeling everything. The peel is edible and helps the fruit stay in pieces.",
+    ],
+  },
+  {
+    id: "rice-cauliflower",
+    title: "Turn cauliflower into rice",
+    image: "/prep/cauliflower.jpg",
+    imageAlt: "Cauliflower florets beside a pile of rice-sized crumbs and a box grater.",
+    steps: [
+      "Cut out the core. Break the head into florets about the size of a golf ball. The thick stem can be chopped too.",
+      "If you have a box grater, rub a floret down the large holes. The crumbs should look like rice, not mashed potato.",
+      "No grater: chop the florets, then rock the knife through them until the pieces are rice-sized. Stop before they turn wet.",
+      "Do not wash the crumbs. Extra water makes them soggy in the pan.",
+    ],
+    mistakes: [
+      "Pulsing so long in a machine that it becomes puree. A few short chops are enough.",
+      "Crowding a cold pan. Cauliflower rice wants a wide, hot pan so it steams off instead of boiling.",
+    ],
+  },
+  {
+    id: "flake-tuna",
+    title: "Drain and flake tuna",
+    image: "/prep/tuna.jpg",
+    imageAlt: "Tuna from a can, drained and flaked into large pieces with a fork.",
+    steps: [
+      "Choose tuna packed in water, not a flavored pouch. Open the can and press the lid to pour the water off.",
+      "For a drier salad, tip the tuna into a sieve and press gently with a spoon. You do not need to squeeze it dry.",
+      "Break it with a fork into large flakes. Leave some chunks so the salad is not a paste.",
+      "Taste a flake before you salt the salad. Canned tuna is already salty.",
+    ],
+    mistakes: [
+      "Mashing it with the yogurt until it looks like baby food. Fold the dressing in.",
+      "Buying tuna packed in a sweet sauce. Water-packed is the plain ingredient this recipe wants.",
+    ],
+  },
+  {
+    id: "hard-boil-egg",
+    title: "Hard-boil and peel an egg",
+    image: "/prep/egg.jpg",
+    imageAlt: "Hard-boiled eggs, one peeled and halved to show a set yellow yolk.",
+    steps: [
+      "Put the eggs in a saucepan in one layer. Cover them with cold water by about an inch.",
+      "Bring the water to a boil, then turn the heat to low so it barely simmers. Set a timer for 10 minutes.",
+      "Move the eggs into a bowl of cold water. The shock stops the cooking and loosens the shell.",
+      "Crack the shell all over, then peel under a trickle of water. The yolk should be set, not dry and gray.",
+    ],
+    mistakes: [
+      "A rolling boil the whole time. The eggs bounce, crack, and get rubbery.",
+      "Peeling them while they are still hot. The white sticks to the shell. Cool them first.",
+    ],
+  },
 ];
 
 export function getPrep(id: string) {

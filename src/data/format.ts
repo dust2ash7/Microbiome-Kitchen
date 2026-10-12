@@ -38,6 +38,7 @@ const UNIT_PLURAL: Record<string, string> = {
   onion: "onions",
   sprig: "sprigs",
   head: "heads",
+  leaf: "leaves",
   pinch: "pinches",
   tbsp: "tbsp",
   tsp: "tsp",
